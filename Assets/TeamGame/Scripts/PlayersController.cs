@@ -79,21 +79,25 @@ public class PlayersController : MonoBehaviour
             if (_currentSkill == UpgradeType.Speed)
             {
                 _playerStats.speed++;
+                _playerSpeedFill.fillAmount = _playerStats.speed / 10f;
                 _playerStats.SaveToFile();
             }
             else if (_currentSkill == UpgradeType.Stamina)
             {
                 _playerStats.stamina++;
+                _playerStaminaFill.fillAmount = _playerStats.stamina / 10f;
                 _playerStats.SaveToFile();
             }
             else if (_currentSkill == UpgradeType.Attack)
             {
                 _playerStats.attack++;
+                _playerAttackFill.fillAmount = _playerStats.attack / 10f;
                 _playerStats.SaveToFile();
             }
             else if (_currentSkill == UpgradeType.Defense)
             {
                 _playerStats.defense++;
+                _playerDefenseFill.fillAmount = _playerStats.defense / 10f;
                 _playerStats.SaveToFile();
             }
             MusicController.Instance.PlaySpecificSound(_upgradeSkillSound);
