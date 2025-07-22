@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerStatsData
 {
     public string characterName;
-    public Sprite icon;
     public int speed;
     public int stamina;
     public int attack;
@@ -17,6 +16,7 @@ public class PlayerStats : ScriptableObject
 {
     [Header("Основные характеристики")]
     public string characterName;
+    public Sprite icon;
     public int speed;
     public int stamina;
     public int attack;

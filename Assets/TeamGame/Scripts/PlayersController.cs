@@ -1,10 +1,27 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum UpgradeType
+{
+    Speed,
+    Stamina,
+    Attack,
+    Defense
+}
+
 public class PlayersController : MonoBehaviour
 {
+    public static PlayersController Instance;
+    
     [SerializeField] private GameObject _playerPanel;
+    [SerializeField] private GameObject _upgradePanel;
+
+    [SerializeField] private TextMeshProUGUI _upgradeSkillText;
+
+    [Header("Icon")] 
+    [SerializeField] private Image _playerIcon;
     
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _playerNameText;
@@ -20,7 +37,12 @@ public class PlayersController : MonoBehaviour
     [SerializeField] private Image _playerDefenseFill;
     
     private PlayerStats _playerStats;
-    
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public void OpenPlayerPanel(PlayerStats playerStats)
     {
         _playerStats = playerStats;
@@ -28,6 +50,8 @@ public class PlayersController : MonoBehaviour
         _playerPanel.SetActive(true);
         
         _playerNameText.text = playerStats.characterName;
+
+        _playerIcon.sprite = playerStats.icon;
         
         _playerSpeedText.text = $"{playerStats.speed}/10";
         _playerStaminaText.text = $"{playerStats.stamina}/10";
@@ -38,5 +62,22 @@ public class PlayersController : MonoBehaviour
         _playerStaminaFill.fillAmount = playerStats.stamina / 10f;
         _playerAttackFill.fillAmount = playerStats.attack / 10f;
         _playerDefenseFill.fillAmount = playerStats.defense / 10f;
+    }
+
+    public void UpgradeSpeed()
+    {
+        
+    }
+    public void UpgradeStamina()
+    {
+        
+    }
+    public void UpgradeAttack()
+    {
+        
+    }
+    public void UpgradeDefense()
+    {
+        
     }
 }
