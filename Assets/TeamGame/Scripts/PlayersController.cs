@@ -1,4 +1,5 @@
 using System;
+using PowerLines.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,9 +18,15 @@ public class PlayersController : MonoBehaviour
     
     [SerializeField] private GameObject _playerPanel;
     [SerializeField] private GameObject _upgradePanel;
+    [SerializeField] private GameObject _haveNoSkillPointsPanel;
 
     [SerializeField] private TextMeshProUGUI _upgradeSkillText;
+    [SerializeField] private TextMeshProUGUI _skillPointsText;
 
+    [Header("Sounds")] 
+    [SerializeField] private AudioClip _upgradeSkillSound;
+    [SerializeField] private AudioClip _haveNoSkillPointsSound;
+    
     [Header("Icon")] 
     [SerializeField] private Image _playerIcon;
     
@@ -37,6 +44,7 @@ public class PlayersController : MonoBehaviour
     [SerializeField] private Image _playerDefenseFill;
     
     private PlayerStats _playerStats;
+    private UpgradeType _currentSkill;
 
     private void Awake()
     {
@@ -64,20 +72,78 @@ public class PlayersController : MonoBehaviour
         _playerDefenseFill.fillAmount = playerStats.defense / 10f;
     }
 
+    public void UpgradeSkill()
+    {
+        if (WalletController.Instance.skillPoints >= 5)
+        {
+            if (_currentSkill == UpgradeType.Speed)
+            {
+                _playerStats.speed++;
+                _playerStats.SaveToFile();
+            }
+            else if (_currentSkill == UpgradeType.Stamina)
+            {
+                _playerStats.stamina++;
+                _playerStats.SaveToFile();
+            }
+            else if (_currentSkill == UpgradeType.Attack)
+            {
+                _playerStats.attack++;
+                _playerStats.SaveToFile();
+            }
+            else if (_currentSkill == UpgradeType.Defense)
+            {
+                _playerStats.defense++;
+                _playerStats.SaveToFile();
+            }
+            MusicController.Instance.PlaySpecificSound(_upgradeSkillSound);
+        }
+        else
+        {
+            MusicController.Instance.PlaySpecificSound(_haveNoSkillPointsSound);
+            _haveNoSkillPointsPanel.SetActive(true);
+        }
+    }
+    
     public void UpgradeSpeed()
     {
-        
+        OpenUpgradePanel(UpgradeType.Speed);
     }
     public void UpgradeStamina()
     {
-        
+        OpenUpgradePanel(UpgradeType.Stamina);
     }
     public void UpgradeAttack()
     {
-        
+        OpenUpgradePanel(UpgradeType.Attack);
     }
     public void UpgradeDefense()
     {
+        OpenUpgradePanel(UpgradeType.Defense);
+    }
+
+    private void OpenUpgradePanel(UpgradeType upgradeType)
+    {
+        string stat = "";
         
+        switch (upgradeType)
+        {
+            case UpgradeType.Speed:
+                stat = "SPEED";
+                break;
+            case UpgradeType.Stamina:
+                stat = "STAMINA";
+                break;
+            case UpgradeType.Attack:
+                stat = "ATTACK";
+                break;
+            case UpgradeType.Defense:
+                stat = "DEFENSE";
+                break;
+        }
+        
+        _upgradePanel.SetActive(true);
+        _upgradeSkillText.text = $"YOU SURE YOU WANT TO UPGRADE {stat}?";
+        _skillPointsText.text = $"You have {WalletController.Instance.skillPoints} skill points";
     }
 }
