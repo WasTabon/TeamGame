@@ -8628,6 +8628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9a5aed07e26ca4b9deeef187cd8706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrollViewSnapController: {fileID: 5767156201458854177}
   _items: {fileID: 6109468967338267169}
   skillPoints: 0
   money: 0
@@ -17500,7 +17501,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollRect: {fileID: 2234396536375036756}
   content: {fileID: 6109468967338267169}
-  totalItems: 10
   scrollDuration: 0.3
   scrollDurationAnimated: 0.1
   _scrollSound: {fileID: 0}

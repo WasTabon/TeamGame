@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,24 +9,23 @@ public class ScrollViewSnapController : MonoBehaviour
 {
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private RectTransform content;
-    [SerializeField] private int totalItems = 5;
     [SerializeField] private float scrollDuration = 0.3f;
     [SerializeField] private float scrollDurationAnimated = 0.1f;
     [SerializeField] private AudioClip _scrollSound;
-    
+
     private int visibleIndex = 0;
     private float stepSize;
     private Tween scrollTween;
 
-    private bool _isWin;
-
     private void Start()
     {
-        stepSize = 1f / (totalItems - 1);
-        visibleIndex = Mathf.Clamp(visibleIndex, 0, totalItems - 1);
-        
-        RectTransform activeItem = content.GetChild(0) as RectTransform;
-        WalletController.Instance.currentItem = activeItem;
+        UpdateStepSize();
+
+        visibleIndex = Mathf.Clamp(visibleIndex, 0, GetActiveItemCount() - 1);
+
+        RectTransform activeItem = GetActiveChildAt(visibleIndex);
+        if (activeItem != null)
+            WalletController.Instance.currentItem = activeItem;
     }
 
     public void ScrollLeft()
@@ -40,7 +40,7 @@ public class ScrollViewSnapController : MonoBehaviour
 
     public void ScrollRight()
     {
-        if (visibleIndex < totalItems - 1)
+        if (visibleIndex < GetActiveItemCount() - 1)
         {
             visibleIndex++;
             SnapToIndex(visibleIndex);
@@ -50,12 +50,14 @@ public class ScrollViewSnapController : MonoBehaviour
 
     public void SetNextItem()
     {
-        RectTransform activeItem = content.GetChild(0) as RectTransform;
-        WalletController.Instance.currentItem = activeItem;
+        RectTransform activeItem = GetActiveChildAt(visibleIndex);
+        if (activeItem != null)
+            WalletController.Instance.currentItem = activeItem;
     }
 
     private void SnapToIndex(int index, bool instant = false)
     {
+        UpdateStepSize();
         float targetPosition = stepSize * index;
 
         if (scrollTween != null && scrollTween.IsActive())
@@ -74,21 +76,53 @@ public class ScrollViewSnapController : MonoBehaviour
                 scrollDuration
             ).SetEase(Ease.OutCubic);
         }
-        
-        if (content != null && content.childCount > index)
-        {
-            RectTransform activeItem = content.GetChild(index) as RectTransform;
+
+        RectTransform activeItem = GetActiveChildAt(index);
+        if (activeItem != null)
             WalletController.Instance.currentItem = activeItem;
-        }
     }
-    
-    
-    private System.Collections.IEnumerator ScrollToIndexAnimated(int targetIndex)
+
+    private IEnumerator ScrollToIndexAnimated(int targetIndex)
     {
         for (int i = 0; i <= targetIndex; i++)
         {
             SnapToIndex(i);
             yield return new WaitForSeconds(scrollDurationAnimated * 0.75f);
         }
+    }
+
+    // 🧩 Получить активный дочерний элемент по индексу
+    private RectTransform GetActiveChildAt(int activeIndex)
+    {
+        int count = 0;
+        foreach (Transform child in content)
+        {
+            if (child.gameObject.activeSelf)
+            {
+                if (count == activeIndex)
+                    return child as RectTransform;
+                count++;
+            }
+        }
+        return null;
+    }
+
+    // 🧩 Получить количество активных элементов
+    private int GetActiveItemCount()
+    {
+        int count = 0;
+        foreach (Transform child in content)
+        {
+            if (child.gameObject.activeSelf)
+                count++;
+        }
+        return count;
+    }
+
+    // 🧩 Обновить размер шага
+    private void UpdateStepSize()
+    {
+        int activeCount = GetActiveItemCount();
+        stepSize = activeCount > 1 ? 1f / (activeCount - 1) : 0f;
     }
 }
