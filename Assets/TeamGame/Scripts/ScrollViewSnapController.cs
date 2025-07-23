@@ -13,6 +13,8 @@ public class ScrollViewSnapController : MonoBehaviour
     [SerializeField] private float scrollDurationAnimated = 0.1f;
     [SerializeField] private AudioClip _scrollSound;
 
+    private int _index;
+    
     private int visibleIndex = 0;
     private float stepSize;
     private Tween scrollTween;
@@ -50,7 +52,7 @@ public class ScrollViewSnapController : MonoBehaviour
 
     public void SetNextItem()
     {
-        RectTransform activeItem = GetActiveChildAt(visibleIndex);
+        RectTransform activeItem = GetActiveChildAt(_index + 1);
         if (activeItem != null)
             WalletController.Instance.currentItem = activeItem;
     }
@@ -80,6 +82,8 @@ public class ScrollViewSnapController : MonoBehaviour
         RectTransform activeItem = GetActiveChildAt(index);
         if (activeItem != null)
             WalletController.Instance.currentItem = activeItem;
+
+        _index = index;
     }
 
     private IEnumerator ScrollToIndexAnimated(int targetIndex)
