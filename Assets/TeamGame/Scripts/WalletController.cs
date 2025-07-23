@@ -6,6 +6,7 @@ public class WalletController : MonoBehaviour
 {
     public static WalletController Instance;
 
+    [SerializeField] private ScrollViewSnapController _scrollViewSnapController;
     [SerializeField] private RectTransform _items;
 
     public int skillPoints;
@@ -14,21 +15,18 @@ public class WalletController : MonoBehaviour
     private const int ItemPrice = 500;
     private HashSet<string> purchasedItems = new HashSet<string>();
 
+    public RectTransform currentItem;
+
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         Instance = this;
+        
         LoadPurchasedItems();
     }
 
-    public void BuyItem(RectTransform itemRect)
+    public void BuyItem()
     {
-        string itemId = itemRect.name;
+        string itemId = currentItem.name;
 
         if (purchasedItems.Contains(itemId))
         {
@@ -46,7 +44,9 @@ public class WalletController : MonoBehaviour
         purchasedItems.Add(itemId);
         SavePurchasedItems();
 
-        AnimateAndRemove(itemRect);
+        AnimateAndRemove(currentItem);
+        
+        _scrollViewSnapController.SetNextItem();
     }
 
     private void AnimateAndRemove(RectTransform itemRect)

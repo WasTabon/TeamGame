@@ -8631,6 +8631,7 @@ MonoBehaviour:
   _items: {fileID: 6109468967338267169}
   skillPoints: 0
   money: 0
+  currentItem: {fileID: 0}
 --- !u!1 &1149378628
 GameObject:
   m_ObjectHideFlags: 0
@@ -12251,7 +12252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7312223, y: 0.68529904}
   m_AnchorMax: {x: 0.7312223, y: 0.68529904}
-  m_AnchoredPosition: {x: 20.140015, y: -1.3370361}
+  m_AnchoredPosition: {x: 20.140015, y: -1.3369141}
   m_SizeDelta: {x: 540.28, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1509884944
@@ -14623,13 +14624,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1137291387}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1137291389}
+        m_TargetAssemblyTypeName: WalletController, Assembly-CSharp
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -16355,7 +16356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.27025923, y: 0.68529904}
   m_AnchorMax: {x: 0.27025923, y: 0.68529904}
-  m_AnchoredPosition: {x: -21.440002, y: -1.3370361}
+  m_AnchoredPosition: {x: -21.439941, y: -1.3369141}
   m_SizeDelta: {x: 542.88, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972908907
@@ -17394,7 +17395,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5068046730584053614}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 

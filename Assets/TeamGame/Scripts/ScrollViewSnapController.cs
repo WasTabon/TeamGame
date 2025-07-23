@@ -23,6 +23,9 @@ public class ScrollViewSnapController : MonoBehaviour
     {
         stepSize = 1f / (totalItems - 1);
         visibleIndex = Mathf.Clamp(visibleIndex, 0, totalItems - 1);
+        
+        RectTransform activeItem = content.GetChild(0) as RectTransform;
+        WalletController.Instance.currentItem = activeItem;
     }
 
     public void ScrollLeft()
@@ -45,6 +48,12 @@ public class ScrollViewSnapController : MonoBehaviour
         }
     }
 
+    public void SetNextItem()
+    {
+        RectTransform activeItem = content.GetChild(0) as RectTransform;
+        WalletController.Instance.currentItem = activeItem;
+    }
+
     private void SnapToIndex(int index, bool instant = false)
     {
         float targetPosition = stepSize * index;
@@ -64,6 +73,12 @@ public class ScrollViewSnapController : MonoBehaviour
                 targetPosition,
                 scrollDuration
             ).SetEase(Ease.OutCubic);
+        }
+        
+        if (content != null && content.childCount > index)
+        {
+            RectTransform activeItem = content.GetChild(index) as RectTransform;
+            WalletController.Instance.currentItem = activeItem;
         }
     }
     
