@@ -11,6 +11,7 @@ public class WalletController : MonoBehaviour
 
     public int skillPoints;
     public int money;
+    public int rating;
 
     private const int ItemPrice = 500;
     private HashSet<string> purchasedItems = new HashSet<string>();
@@ -47,6 +48,14 @@ public class WalletController : MonoBehaviour
         AnimateAndRemove(currentItem);
         
         _scrollViewSnapController.SetNextItem();
+    }
+
+    public void ClaimReward(int neededRating, GameObject button)
+    {
+        if (rating >= neededRating)
+        {
+            money += 500;
+        }
     }
 
     private void AnimateAndRemove(RectTransform itemRect)
