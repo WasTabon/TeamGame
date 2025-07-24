@@ -37,14 +37,14 @@ public class BallController : MonoBehaviour
     {
         currentOwner = null;
         Vector2 direction = (target - rb.position).normalized;
-        rb.velocity = direction * 6f; // Slightly faster pass
+        rb.velocity = direction * 10f; // Slightly faster pass
     }
 
     public void ShootTowards(Vector2 target)
     {
         currentOwner = null;
         Vector2 direction = (target - rb.position).normalized;
-        rb.velocity = direction * 10f; // Faster shot
+        rb.velocity = direction * 20f; // Faster shot
     }
 
     void OnTriggerEnter2D(Collider2D other)

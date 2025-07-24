@@ -854,7 +854,7 @@ Transform:
   m_GameObject: {fileID: 44637887}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -5.59, z: 0}
+  m_LocalPosition: {x: 0.02, y: -4.38, z: 0}
   m_LocalScale: {x: 6.676459, y: 0.65748304, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5446,7 +5446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   role: 1
-  moveSpeed: 2
+  moveSpeed: 3.5
   ball: {fileID: 567559451}
   goalToAttack: {fileID: 1438378578}
 --- !u!50 &422120404
@@ -5474,7 +5474,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &422120405
 BoxCollider2D:
@@ -7249,7 +7249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4500d477103b3414298bba4e3267c1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matchDuration: 15
+  matchDuration: 10
 --- !u!1001 &524016088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8025,7 +8025,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &567559455
 CircleCollider2D:
@@ -10268,8 +10268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  role: 1
-  moveSpeed: 2
+  role: 0
+  moveSpeed: 3.5
   ball: {fileID: 567559451}
   goalToAttack: {fileID: 336042667}
 --- !u!50 &742668516
@@ -10297,7 +10297,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &742668517
 BoxCollider2D:
@@ -24540,7 +24540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   role: 1
-  moveSpeed: 2
+  moveSpeed: 3.5
   ball: {fileID: 567559451}
   goalToAttack: {fileID: 336042667}
 --- !u!50 &1648308739
@@ -24568,7 +24568,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1648308740
 BoxCollider2D:
@@ -26039,8 +26039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
-  role: 2
-  moveSpeed: 2
+  role: 1
+  moveSpeed: 3.5
   ball: {fileID: 567559451}
   goalToAttack: {fileID: 1438378578}
 --- !u!50 &1740618708
@@ -26068,7 +26068,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1740618709
 BoxCollider2D:
@@ -26736,7 +26736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   role: 1
-  moveSpeed: 2
+  moveSpeed: 3.5
   ball: {fileID: 567559451}
   goalToAttack: {fileID: 1438378578}
 --- !u!50 &1781599491
@@ -26764,7 +26764,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1781599492
 BoxCollider2D:
@@ -26912,7 +26912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   role: 2
-  moveSpeed: 2
+  moveSpeed: 3.5
   ball: {fileID: 567559451}
   goalToAttack: {fileID: 336042667}
 --- !u!50 &1784881420
@@ -26940,7 +26940,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1784881421
 BoxCollider2D:
@@ -30490,7 +30490,7 @@ Transform:
   m_GameObject: {fileID: 2060645828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0826, y: 5.35, z: 0}
+  m_LocalPosition: {x: -0.0826, y: 4.42, z: 0}
   m_LocalScale: {x: 6.676459, y: 0.65748304, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

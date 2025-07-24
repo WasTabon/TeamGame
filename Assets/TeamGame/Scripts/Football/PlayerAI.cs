@@ -17,7 +17,7 @@ public class PlayerAI : MonoBehaviour
     private Rigidbody2D rb;
     private float passCooldown = 0.5f; // Уменьшено для очень частых пасов
     private float passTimer = 0f;
-    private float avoidRadius = 1.5f; // Сохранено для избегания столкновений
+    private float avoidRadius = 0.8f; // Сохранено для избегания столкновений
     private static Transform currentChaser; // Один игрок за мячом в команде
     private Vector2 fieldCenter = Vector2.zero;
     private Vector2 lastVelocity; // Для сглаживания движения
