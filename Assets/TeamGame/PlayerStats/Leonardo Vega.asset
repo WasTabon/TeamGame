@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Leonardo Vega
   m_EditorClassIdentifier: 
   characterName: Leonardo Vega
+  icon: {fileID: 0}
   speed: 10
   stamina: 5
   attack: 3
   defense: 5
+  specialSkill: Avoids fouls even in aggressive play

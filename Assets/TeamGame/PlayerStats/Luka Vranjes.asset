@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Luka Vranjes
   m_EditorClassIdentifier: 
   characterName: "Luka Vranje\u0161"
+  icon: {fileID: 0}
   speed: 1
   stamina: 1
   attack: 9
   defense: 9
+  specialSkill: Quickly adapts to any weather conditions

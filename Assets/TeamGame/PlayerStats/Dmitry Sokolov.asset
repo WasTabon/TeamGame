@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Dmitry Sokolov
   m_EditorClassIdentifier: 
   characterName: Dmitry Sokolov
+  icon: {fileID: 0}
   speed: 8
   stamina: 6
   attack: 8
   defense: 9
+  specialSkill: Performs well in night matches

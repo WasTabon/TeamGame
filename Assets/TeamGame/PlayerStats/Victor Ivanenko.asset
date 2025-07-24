@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Victor Ivanenko
   m_EditorClassIdentifier: 
   characterName: Victor Ivanenko
+  icon: {fileID: 0}
   speed: 10
   stamina: 8
   attack: 7
   defense: 10
+  specialSkill: 'Keeps calm and composed when tensions rise  '

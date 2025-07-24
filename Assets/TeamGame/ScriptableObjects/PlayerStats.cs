@@ -21,6 +21,7 @@ public class PlayerStats : ScriptableObject
     public int stamina;
     public int attack;
     public int defense;
+    public string specialSkill;
     
     private const string SaveFolder = "PlayerStatsSaves";
 

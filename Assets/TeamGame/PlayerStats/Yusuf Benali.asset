@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Yusuf Benali
   m_EditorClassIdentifier: 
   characterName: Yusuf Benali
+  icon: {fileID: 0}
   speed: 6
   stamina: 9
   attack: 1
   defense: 3
+  specialSkill: Efficient passer in crowded midfield situations

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Nico Duarte
   m_EditorClassIdentifier: 
   characterName: Nico Duarte
+  icon: {fileID: 0}
   speed: 1
   stamina: 6
   attack: 4
   defense: 2
+  specialSkill: Stays focused in extreme heat

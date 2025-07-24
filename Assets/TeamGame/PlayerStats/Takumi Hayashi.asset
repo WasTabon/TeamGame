@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Takumi Hayashi
   m_EditorClassIdentifier: 
   characterName: Takumi Hayashi
+  icon: {fileID: 0}
   speed: 9
   stamina: 3
   attack: 9
   defense: 5
+  specialSkill: Plays smart and clean under strict refereeing

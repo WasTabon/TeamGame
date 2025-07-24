@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Carlos Mendez
   m_EditorClassIdentifier: 
   characterName: Carlos Mendez
+  icon: {fileID: 0}
   speed: 9
   stamina: 10
   attack: 1
   defense: 6
+  specialSkill: Maintains stamina in hot weather
