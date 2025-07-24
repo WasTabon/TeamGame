@@ -60,4 +60,15 @@ public class ChoosePlayerController : MonoBehaviour
         
         _choosePlayerPanel.SetActive(false);
     }
+
+    public void StartGame()
+    {
+        _text1.text = $"Choose Player";
+        _text2.text = $"Choose Player";
+        _text3.text = $"Choose Player";
+
+        _image1.sprite = null;
+        _image2.sprite = null;
+        _image3.sprite = null;
+    }
 }
