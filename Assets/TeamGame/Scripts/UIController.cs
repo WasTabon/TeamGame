@@ -7,6 +7,8 @@ public class UIController : MonoBehaviour
 {
     public static UIController Instance;
 
+    [SerializeField] private GameObject _matchPanel;
+    
     [SerializeField] private CanvasGroup _canvasGroup;
     
     [Header("Text Elements")]
@@ -30,7 +32,7 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        PlayIntroSequence();
+        
     }
 
     private void Update()
@@ -106,6 +108,7 @@ public class UIController : MonoBehaviour
             .OnComplete((() =>
             {
                 GameManager.Instance.StartGame();
+                _matchPanel.gameObject.SetActive(false);
             }));
     }
 }
