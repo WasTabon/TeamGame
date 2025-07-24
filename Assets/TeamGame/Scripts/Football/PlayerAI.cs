@@ -31,62 +31,74 @@ public class PlayerAI : MonoBehaviour
     }
 
     private void Update()
+{
+    passTimer -= Time.deltaTime;
+
+    Transform ballOwner = ball.GetComponent<BallController>().currentOwner;
+    bool isAllyOwner = ballOwner != null && ballOwner.CompareTag(gameObject.tag);
+    float distToBall = Vector2.Distance(transform.position, ball.position);
+
+    // Выбираем охотника за мячом
+    if (currentChaser == null || Vector2.Distance(currentChaser.position, ball.position) > 6f || !currentChaser.gameObject.activeInHierarchy)
     {
-        passTimer -= Time.deltaTime;
-
-        Transform ballOwner = ball.GetComponent<BallController>().currentOwner;
-        bool isAllyOwner = ballOwner != null && ballOwner.CompareTag(gameObject.tag);
-        float distToBall = Vector2.Distance(transform.position, ball.position);
-
-        // Переопределяем охотника, если мяч далеко или нет охотника
-        if (currentChaser == null || Vector2.Distance(currentChaser.position, ball.position) > 6f)
-        {
-            currentChaser = FindClosestPlayerToBall();
-        }
-
-        Vector2 target;
-        if (transform == currentChaser && !isAllyOwner)
-        {
-            // Преследуем мяч
-            target = (Vector2)ball.position;
-        }
-        else if (isAllyOwner && ballOwner != transform)
-        {
-            // Позиционируемся для паса ближе к мячу
-            Vector2 offset = ((Vector2)goalToAttack.position - (Vector2)transform.position).normalized * 2.5f;
-            target = (Vector2)ballOwner.position + offset;
-            target = ClampToField(target);
-        }
-        else
-        {
-            // Динамическая тактическая позиция
-            target = GetTacticalPosition(distToBall);
-        }
-
-        Vector2 direction = (target - (Vector2)transform.position).normalized;
-        Vector2 avoidance = ComputeAvoidance();
-        Vector2 finalDirection = (direction + avoidance).normalized;
-
-        // Сглаживание движения для устранения тряски
-        Vector2 targetVelocity = finalDirection * moveSpeed;
-        rb.velocity = Vector2.Lerp(lastVelocity, targetVelocity, Time.deltaTime * 12f); // Ускорено сглаживание
-        lastVelocity = rb.velocity;
-
-        // Взаимодействие с мячом
-        if (distToBall < 0.7f && passTimer <= 0f && (!isAllyOwner || ballOwner == transform))
-        {
-            BallController ballCtrl = ball.GetComponent<BallController>();
-            ballCtrl.SetOwner(transform);
-            TryPassOrShoot();
-            passTimer = passCooldown;
-        }
+        currentChaser = FindClosestFreePlayerToBall();
     }
 
-    Transform FindClosestPlayerToBall()
+    // Если мяч свободен и рядом — захватываем инициативу
+    if (ballOwner == null && distToBall < 1.5f && currentChaser == null)
+    {
+        currentChaser = transform;
+    }
+
+    Vector2 target;
+    if (transform == currentChaser && !isAllyOwner)
+    {
+        // Преследуем мяч
+        target = (Vector2)ball.position;
+    }
+    else if (isAllyOwner && ballOwner != transform)
+    {
+        // Открываемся под пас
+        Vector2 offset = ((Vector2)goalToAttack.position - (Vector2)transform.position).normalized * 2.5f;
+        target = (Vector2)ballOwner.position + offset;
+        target = ClampToField(target);
+    }
+    else
+    {
+        // Тактическая позиция
+        target = GetTacticalPosition(distToBall);
+    }
+
+    // Если позиция очень близко к стенке — сместиться к центру
+    if (Mathf.Abs(target.x) > 2.6f || Mathf.Abs(target.y) > 4.6f)
+    {
+        target = Vector2.Lerp(target, fieldCenter, 0.4f);
+    }
+
+    Vector2 direction = (target - (Vector2)transform.position).normalized;
+    Vector2 avoidance = ComputeAvoidance();
+    Vector2 finalDirection = (direction + avoidance).normalized;
+
+    Vector2 targetVelocity = finalDirection * moveSpeed;
+    rb.velocity = Vector2.Lerp(lastVelocity, targetVelocity, Time.deltaTime * 12f);
+    lastVelocity = rb.velocity;
+
+    // Взаимодействие с мячом
+    if (distToBall < 0.7f && passTimer <= 0f && (!isAllyOwner || ballOwner == transform))
+    {
+        BallController ballCtrl = ball.GetComponent<BallController>();
+        ballCtrl.SetOwner(transform);
+        TryPassOrShoot();
+        passTimer = passCooldown;
+    }
+}
+    
+    
+    Transform FindClosestFreePlayerToBall()
     {
         PlayerAI[] allPlayers = FindObjectsOfType<PlayerAI>();
         return allPlayers
-            .Where(p => p.team == team)
+            .Where(p => p.team == team && p != this && Vector2.Distance(p.transform.position, ball.position) < 6f)
             .OrderBy(p => Vector2.Distance(p.transform.position, ball.position))
             .FirstOrDefault()?.transform;
     }
