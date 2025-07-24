@@ -57,5 +57,7 @@ public class ChoosePlayerController : MonoBehaviour
             _text3.text = playerStats.characterName;
             _image3.sprite = playerStats.icon;
         }
+        
+        _choosePlayerPanel.SetActive(false);
     }
 }
