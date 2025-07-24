@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
             if (timer <= 0f)
             {
                 _startGame = false;
+                UIController.Instance.FinishMatch();
                 Debug.Log($"Match Over! Ally: {allyScore} - Enemy: {enemyScore}");
                 //Time.timeScale = 0;
             }

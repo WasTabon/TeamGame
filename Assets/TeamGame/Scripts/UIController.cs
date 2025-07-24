@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
@@ -7,6 +7,11 @@ public class UIController : MonoBehaviour
 {
     public static UIController Instance;
 
+    [SerializeField] private TextMeshProUGUI _skillText;
+    [SerializeField] private TextMeshProUGUI _ratingPanelText;
+    [SerializeField] private TextMeshProUGUI _descriptionText;
+    
+    [SerializeField] private GameObject _rewardPanel;
     [SerializeField] private GameObject _matchPanel;
     
     [SerializeField] private CanvasGroup _canvasGroup;
@@ -39,6 +44,19 @@ public class UIController : MonoBehaviour
     {
         _moneyText.text = $"{WalletController.Instance.money}$";
         _ratingText.text = $"{WalletController.Instance.rating}";
+    }
+
+    public void FinishMatch()
+    {
+        List<string> result = new List<string>();
+        result = MatchResultSystem.Instance.GenerateRandomMatchResult();
+
+        _skillText.text = result[0];
+        _ratingPanelText.text = result[1];
+        _descriptionText.text = result[2];
+        
+        _rewardPanel.SetActive(true);
+        _canvasGroup.DOFade(1f, 3f);
     }
 
     public void PlayIntroSequence()
