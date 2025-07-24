@@ -7,6 +7,8 @@ public class UIController : MonoBehaviour
 {
     public static UIController Instance;
 
+    [SerializeField] private CanvasGroup _canvasGroup;
+    
     [Header("Text Elements")]
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private TextMeshProUGUI _ratingText;
@@ -100,7 +102,10 @@ public class UIController : MonoBehaviour
 
     private void OnCountdownComplete()
     {
-        Debug.Log("Countdown finished.");
-        // Здесь твоя логика
+        _canvasGroup.DOFade(0f, 1f)
+            .OnComplete((() =>
+            {
+                GameManager.Instance.StartGame();
+            }));
     }
 }

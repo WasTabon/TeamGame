@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,27 +9,58 @@ public class GameManager : MonoBehaviour
     private int allyScore = 0;
     private int enemyScore = 0;
 
-    void Awake()
+    [SerializeField] private List<GameObject> _players;
+
+    private List<Vector3> _playerPositions;
+
+    public bool _startGame;
+
+    private void Awake()
     {
         Instance = this;
     }
 
-    void Start()
+    private void Start()
     {
+        _playerPositions = new List<Vector3>();
+
+        for (int i = 0; i < _players.Count; i++)
+        {
+            _playerPositions.Add(new Vector3());
+            _playerPositions[i] = _players[i].transform.localPosition;
+        }
+        
         timer = matchDuration;
-        ResetBallAndPlayers();
+        //Time.timeScale = 0;
     }
 
-    void Update()
+    private void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        if (_startGame)
         {
-            Debug.Log($"Match Over! Ally: {allyScore} - Enemy: {enemyScore}");
-            Time.timeScale = 0;
+            timer -= Time.deltaTime;
+            if (timer <= 0f)
+            {
+                _startGame = false;
+                Debug.Log($"Match Over! Ally: {allyScore} - Enemy: {enemyScore}");
+                //Time.timeScale = 0;
+            }
         }
     }
 
+    public void StartGame()
+    {
+        for (int i = 0; i < _players.Count; i++)
+        {
+            _players[i].transform.localPosition = _playerPositions[i];
+        }
+        timer = matchDuration;
+        //ResetBallAndPlayers();
+        Time.timeScale = 1;
+        Debug.Log("Game Started!");
+        _startGame = true;
+    }
+    
     public void ScoreGoal(GameObject goal)
     {
         if (goal.CompareTag("AllyGoal"))
@@ -40,7 +72,7 @@ public class GameManager : MonoBehaviour
         ResetBallAndPlayers();
     }
 
-    void ResetBallAndPlayers()
+    private void ResetBallAndPlayers()
     {
         // Reset ball
         GameObject ball = GameObject.FindGameObjectWithTag("Ball");
@@ -55,7 +87,7 @@ public class GameManager : MonoBehaviour
         PlayerAI[] players = FindObjectsOfType<PlayerAI>();
         foreach (var player in players)
         {
-            player.transform.position = player.GetTacticalPosition(); // Теперь работает
+            player.transform.position = player.GetTacticalPosition();
             player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }

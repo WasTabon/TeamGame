@@ -32,6 +32,8 @@ public class PlayerAI : MonoBehaviour
 
     private void Update()
 {
+    if (GameManager.Instance._startGame == false) return;
+    
     passTimer -= Time.deltaTime;
 
     Transform ballOwner = ball.GetComponent<BallController>().currentOwner;

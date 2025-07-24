@@ -16,6 +16,8 @@ public class BallController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (GameManager.Instance._startGame == false) return;
+        
         if (currentOwner != null)
         {
             rb.MovePosition(currentOwner.position + Vector3.up * 0.3f); // Adjusted for ball size (0.5)
