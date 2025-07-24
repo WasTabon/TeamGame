@@ -5432,7 +5432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
-  role: 0
+  role: 1
   moveSpeed: 2
   ball: {fileID: 567559451}
   goalToAttack: {fileID: 1438378578}
@@ -10255,7 +10255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  role: 0
+  role: 1
   moveSpeed: 2
   ball: {fileID: 567559451}
   goalToAttack: {fileID: 336042667}
