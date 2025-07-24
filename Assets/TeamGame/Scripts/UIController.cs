@@ -51,8 +51,8 @@ public class UIController : MonoBehaviour
         List<string> result = new List<string>();
         result = MatchResultSystem.Instance.GenerateRandomMatchResult();
 
-        _skillText.text = result[0];
-        _ratingPanelText.text = result[1];
+        _skillText.text = $"+{result[0]} Skill Points";
+        _ratingPanelText.text = $"+{result[1]} Rating";
         _descriptionText.text = result[2];
         
         _rewardPanel.SetActive(true);
