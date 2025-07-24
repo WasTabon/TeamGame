@@ -1,5 +1,3 @@
-using System;
-using PowerLines.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

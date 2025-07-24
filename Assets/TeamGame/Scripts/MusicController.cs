@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PowerLines.Scripts
-{
-    public class MusicController : MonoBehaviour
+public class MusicController : MonoBehaviour
     {
         public static MusicController Instance;
     
@@ -74,4 +72,3 @@ namespace PowerLines.Scripts
             }
         }
     }
-}
