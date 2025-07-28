@@ -37,7 +37,7 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        
+        // пофіксити continue після завершення матчу бо не всі панелі правильно закриваються
     }
 
     private void Update()
