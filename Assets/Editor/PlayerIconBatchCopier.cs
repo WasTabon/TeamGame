@@ -26,7 +26,7 @@ public class PlayerIconBatchCopier : EditorWindow
         scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.Height(150));
         for (int i = 0; i < sourcePrefabs.Count; i++)
         {
-            sourcePrefabs[i] = (GameObject)EditorGUILayout.ObjectField(sourcePrefabs[i], typeof(GameObject), false);
+            sourcePrefabs[i] = (GameObject)EditorGUILayout.ObjectField(sourcePrefabs[i], typeof(GameObject), true);
         }
         EditorGUILayout.EndScrollView();
 
@@ -40,7 +40,7 @@ public class PlayerIconBatchCopier : EditorWindow
         scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.Height(150));
         for (int i = 0; i < targetPrefabs.Count; i++)
         {
-            targetPrefabs[i] = (GameObject)EditorGUILayout.ObjectField(targetPrefabs[i], typeof(GameObject), false);
+            targetPrefabs[i] = (GameObject)EditorGUILayout.ObjectField(targetPrefabs[i], typeof(GameObject), true);
         }
         EditorGUILayout.EndScrollView();
 

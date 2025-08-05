@@ -2058,6 +2058,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a9d6d99df538cf14da002128f9ebf41a, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Efficient passer in crowded midfield situations
@@ -2768,6 +2772,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: facf7eeb0e33ba140b4027256c1d1112, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Avoids fouls even in aggressive play
@@ -3342,11 +3350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6537,6 +6545,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a9c57c18c13a86440b16b538aedaf56b, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Maintains stamina in hot weather
@@ -6876,11 +6888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 878.1285
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 201.3115
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7838,6 +7850,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49b5495217c082546a799227c8450a0b, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Reads the game well under poor visibility
@@ -8236,11 +8252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 878.1285
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 201.3115
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9906,11 +9922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10060,11 +10076,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10184,6 +10200,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab16874163951f8448046d1f022ae14c, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Stays focused in extreme heat
@@ -10637,6 +10657,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b4773412e2adc9f4e9ac4c6c43871573, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Wins duels on narrow flanks
@@ -11510,11 +11534,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14790,11 +14814,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18063,11 +18087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 878.1285
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 201.3115
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19065,6 +19089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a03ebdb00265594c9773841c8a35c50, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Quickly adapts to any weather conditions
@@ -19526,6 +19554,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f18aa55099791a2498bae31d315b40c2, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Confident in tight spaces
@@ -19875,11 +19907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20104,11 +20136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20511,11 +20543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21807,11 +21839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 878.1285
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 201.3115
       objectReference: {fileID: 0}
     - target: {fileID: 4158587186376217268, guid: 0b89a98070b237649baaa36a67a5e899, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22069,11 +22101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22450,11 +22482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23613,6 +23645,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b512a9a1afa6c5148ba133dd2a59758a, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: 'Keeps calm and composed when tensions rise  '
@@ -24991,6 +25027,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ec768fb4c5c06e743b89b9e25eb15665, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Performs well in night matches
@@ -25849,11 +25889,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26003,11 +26043,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27741,6 +27781,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f18aa55099791a2498bae31d315b40c2, type: 3}
     - target: {fileID: 3584871068322604690, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.9799805
@@ -32196,6 +32240,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895859444}
     m_Modifications:
+    - target: {fileID: 2129170359772296508, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ad39f52857ed214695f0324a26ad445, type: 3}
     - target: {fileID: 2665063366007662795, guid: 1721f6b413e657149aafa85be7cf58b9, type: 3}
       propertyPath: m_text
       value: Excellent ball control on slippery surfaces
@@ -32679,11 +32727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 793.0199
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 955.6328
       objectReference: {fileID: 0}
     - target: {fileID: 4183093521719829244, guid: 28c20210c5447af419f4443019f6c442, type: 3}
       propertyPath: m_LocalPosition.x
