@@ -5,7 +5,7 @@ using UnityEngine.Purchasing.Extension;
 
 public class BuyController : MonoBehaviour
 {
-    private string _donateId = "com.fanstycoon.inappa1";
+    private string _donateId = "com.coachmax.skillpoints";
     
     public GameObject loadingButton;
     public AudioClip buySound;
@@ -17,7 +17,7 @@ public class BuyController : MonoBehaviour
         if (product.definition.id == _donateId)
         {
             Debug.Log("Complete");
-            WalletController.Instance.money += 50;
+            WalletController.Instance.skillPoints += 50;
             PlayerPrefs.SetInt("PlayerMoney", WalletController.Instance.money);
             PlayerPrefs.Save();
             MusicController.Instance.PlaySpecificSound(buySound);
