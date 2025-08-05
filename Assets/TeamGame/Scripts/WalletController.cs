@@ -6,6 +6,8 @@ public class WalletController : MonoBehaviour
 {
     public static WalletController Instance;
 
+    public AudioClip _buySound;
+
     [SerializeField] private ScrollViewSnapController _scrollViewSnapController;
     [SerializeField] private RectTransform _items;
 
@@ -53,6 +55,8 @@ public class WalletController : MonoBehaviour
             return;
         }
 
+        MusicController.Instance.PlaySpecificSound(_buySound);
+        
         money -= ItemPrice;
         purchasedItems.Add(itemId);
         SavePurchasedItems();

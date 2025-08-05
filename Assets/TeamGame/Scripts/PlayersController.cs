@@ -80,6 +80,7 @@ public class PlayersController : MonoBehaviour
     {
         if (WalletController.Instance.skillPoints >= 5)
         {
+            WalletController.Instance.skillPoints -= 5;
             if (_currentSkill == UpgradeType.Speed)
             {
                 _playerStats.speed++;
