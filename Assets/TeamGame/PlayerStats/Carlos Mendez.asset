@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carlos Mendez
   m_EditorClassIdentifier: 
   characterName: Carlos Mendez
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a9c57c18c13a86440b16b538aedaf56b, type: 3}
   speed: 9
   stamina: 10
   attack: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rafael Moreno
   m_EditorClassIdentifier: 
   characterName: Rafael Moreno
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b4773412e2adc9f4e9ac4c6c43871573, type: 3}
   speed: 10
   stamina: 7
   attack: 7

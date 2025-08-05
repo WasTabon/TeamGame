@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Leonardo Vega
   m_EditorClassIdentifier: 
   characterName: Leonardo Vega
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: facf7eeb0e33ba140b4027256c1d1112, type: 3}
   speed: 10
   stamina: 5
   attack: 3

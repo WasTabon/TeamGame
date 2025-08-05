@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dmitry Sokolov
   m_EditorClassIdentifier: 
   characterName: Dmitry Sokolov
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ec768fb4c5c06e743b89b9e25eb15665, type: 3}
   speed: 8
   stamina: 6
   attack: 8

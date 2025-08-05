@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tariq Al-Hassan
   m_EditorClassIdentifier: 
   characterName: Tariq Al-Hassan
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 49b5495217c082546a799227c8450a0b, type: 3}
   speed: 6
   stamina: 1
   attack: 9

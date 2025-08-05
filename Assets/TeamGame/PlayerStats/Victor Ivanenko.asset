@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Victor Ivanenko
   m_EditorClassIdentifier: 
   characterName: Victor Ivanenko
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b512a9a1afa6c5148ba133dd2a59758a, type: 3}
   speed: 10
   stamina: 8
   attack: 7
