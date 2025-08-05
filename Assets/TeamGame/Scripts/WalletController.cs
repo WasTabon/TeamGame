@@ -9,7 +9,17 @@ public class WalletController : MonoBehaviour
     [SerializeField] private ScrollViewSnapController _scrollViewSnapController;
     [SerializeField] private RectTransform _items;
 
-    public int skillPoints;
+    private int _skillPoints;
+    public int skillPoints
+    {
+        get => _skillPoints;
+        set
+        {
+            _skillPoints = value;
+            PlayerPrefs.SetInt("PlayerSkillPoints", _skillPoints);
+            PlayerPrefs.Save();
+        }
+    }
     public int money;
     public int rating;
 
@@ -23,6 +33,8 @@ public class WalletController : MonoBehaviour
         Instance = this;
         
         LoadPurchasedItems();
+        
+        _skillPoints = PlayerPrefs.GetInt("PlayerSkillPoints", 0);
     }
 
     public void BuyItem()
