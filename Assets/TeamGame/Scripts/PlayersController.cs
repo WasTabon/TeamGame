@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,6 +48,11 @@ public class PlayersController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Update()
+    {
+        _skillPointsText.text = $"You have {WalletController.Instance.skillPoints} skill points";
     }
 
     public void OpenPlayerPanel(PlayerStats playerStats)
