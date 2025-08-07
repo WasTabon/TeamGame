@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // Singleton for easy access
-    public float matchDuration = 90f; // Longer match for testing
+    public float matchDuration = 10f; // Longer match for testing
     private float timer;
     private int allyScore = 0;
     private int enemyScore = 0;
