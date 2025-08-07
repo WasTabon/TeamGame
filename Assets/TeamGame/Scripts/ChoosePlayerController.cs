@@ -4,8 +4,13 @@ using UnityEngine.UI;
 
 public class ChoosePlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject _choosePlayerPanel;
+    [SerializeField] private TextMeshProUGUI _attackText;
+    [SerializeField] private TextMeshProUGUI _defenseText;
+    [SerializeField] private TextMeshProUGUI _staminaText;
+    [SerializeField] private TextMeshProUGUI _speedText;
     
+    [SerializeField] private GameObject _choosePlayerPanel;
+
     [SerializeField] private TextMeshProUGUI _text1;
     [SerializeField] private TextMeshProUGUI _text2;
     [SerializeField] private TextMeshProUGUI _text3;
@@ -14,12 +19,14 @@ public class ChoosePlayerController : MonoBehaviour
     [SerializeField] private Image _image2;
     [SerializeField] private Image _image3;
 
-    
-    
     private bool _choose1;
     private bool _choose2;
     private bool _choose3;
     
+    private PlayerStats _selectedPlayer1;
+    private PlayerStats _selectedPlayer2;
+    private PlayerStats _selectedPlayer3;
+
     public void ChoosePlayer1()
     {
         _choosePlayerPanel.SetActive(true);
@@ -27,6 +34,7 @@ public class ChoosePlayerController : MonoBehaviour
         _choose2 = false;
         _choose3 = false;
     }
+
     public void ChoosePlayer2()
     {
         _choosePlayerPanel.SetActive(true);
@@ -34,6 +42,7 @@ public class ChoosePlayerController : MonoBehaviour
         _choose3 = false;
         _choose1 = false;
     }
+
     public void ChoosePlayer3()
     {
         _choosePlayerPanel.SetActive(true);
@@ -48,29 +57,75 @@ public class ChoosePlayerController : MonoBehaviour
         {
             _text1.text = playerStats.characterName;
             _image1.sprite = playerStats.icon;
+            _selectedPlayer1 = playerStats;
         }
         else if (_choose2)
         {
             _text2.text = playerStats.characterName;
             _image2.sprite = playerStats.icon;
+            _selectedPlayer2 = playerStats;
         }
         else if (_choose3)
         {
             _text3.text = playerStats.characterName;
             _image3.sprite = playerStats.icon;
+            _selectedPlayer3 = playerStats;
         }
-        
+
         _choosePlayerPanel.SetActive(false);
     }
 
     public void StartGame()
     {
-        _text1.text = $"Choose Player";
-        _text2.text = $"Choose Player";
-        _text3.text = $"Choose Player";
+        _text1.text = "Choose Player";
+        _text2.text = "Choose Player";
+        _text3.text = "Choose Player";
 
         _image1.sprite = null;
         _image2.sprite = null;
         _image3.sprite = null;
+
+        _selectedPlayer1 = null;
+        _selectedPlayer2 = null;
+        _selectedPlayer3 = null;
+
+        CalculateTotalStats(out int totalSpeed, out int totalStamina, out int totalAttack, out int totalDefense);
+
+        _attackText.text = totalAttack.ToString();
+        _speedText.text = totalSpeed.ToString();
+        _staminaText.text = totalStamina.ToString();
+        _defenseText.text = totalDefense.ToString();
+    }
+
+    public void CalculateTotalStats(out int totalSpeed, out int totalStamina, out int totalAttack, out int totalDefense)
+    {
+        totalSpeed = 0;
+        totalStamina = 0;
+        totalAttack = 0;
+        totalDefense = 0;
+
+        if (_selectedPlayer1 != null)
+        {
+            totalSpeed += _selectedPlayer1.speed;
+            totalStamina += _selectedPlayer1.stamina;
+            totalAttack += _selectedPlayer1.attack;
+            totalDefense += _selectedPlayer1.defense;
+        }
+
+        if (_selectedPlayer2 != null)
+        {
+            totalSpeed += _selectedPlayer2.speed;
+            totalStamina += _selectedPlayer2.stamina;
+            totalAttack += _selectedPlayer2.attack;
+            totalDefense += _selectedPlayer2.defense;
+        }
+
+        if (_selectedPlayer3 != null)
+        {
+            totalSpeed += _selectedPlayer3.speed;
+            totalStamina += _selectedPlayer3.stamina;
+            totalAttack += _selectedPlayer3.attack;
+            totalDefense += _selectedPlayer3.defense;
+        }
     }
 }

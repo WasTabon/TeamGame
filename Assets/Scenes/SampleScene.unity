@@ -1786,7 +1786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &97230232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32217,6 +32217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c30e0908a66f2a489b311fbb9094504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackText: {fileID: 0}
+  _defenseText: {fileID: 0}
+  _staminaText: {fileID: 0}
+  _speedText: {fileID: 0}
   _choosePlayerPanel: {fileID: 1956472850}
   _text1: {fileID: 4860998668415978502}
   _text2: {fileID: 1159086600}
