@@ -31,6 +31,11 @@ public class ChoosePlayerController : MonoBehaviour
     [SerializeField] private Image _image2;
     [SerializeField] private Image _image3;
 
+    int enemySpeed;
+    int enemyStamina;
+    int enemyAttack;
+    int enemyDefense;
+    
     private bool _choose1;
     private bool _choose2;
     private bool _choose3;
@@ -109,10 +114,10 @@ public class ChoosePlayerController : MonoBehaviour
         _selectedPlayer2 = null;
         _selectedPlayer3 = null;
         
-        int enemySpeed = Random.Range(10, 31);
-        int enemyStamina = Random.Range(10, 31);
-        int enemyAttack = Random.Range(10, 31);
-        int enemyDefense = Random.Range(10, 31);
+        enemySpeed = Random.Range(10, 31);
+        enemyStamina = Random.Range(10, 31);
+        enemyAttack = Random.Range(10, 31);
+        enemyDefense = Random.Range(10, 31);
 
         _enemyAttackText.text = enemyAttack.ToString();
         _enemySpeedText.text = enemySpeed.ToString();
