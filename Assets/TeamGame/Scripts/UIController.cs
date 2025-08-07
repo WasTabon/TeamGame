@@ -7,6 +7,8 @@ public class UIController : MonoBehaviour
 {
     public static UIController Instance;
 
+    [SerializeField] private TextMeshProUGUI _seasonDayText;
+    
     [SerializeField] private TextMeshProUGUI _skillText;
     [SerializeField] private TextMeshProUGUI _ratingPanelText;
     [SerializeField] private TextMeshProUGUI _descriptionText;
@@ -30,9 +32,12 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private Canvas _canvas;
 
+    private int _seasonDay;
+
     private void Awake()
     {
         Instance = this;
+        _seasonDay = PlayerPrefs.GetInt("seasonDay", 1);
     }
 
     private void Start()
@@ -44,6 +49,7 @@ public class UIController : MonoBehaviour
     {
         _moneyText.text = $"{WalletController.Instance.money}$";
         _ratingText.text = $"{WalletController.Instance.rating}";
+        _seasonDayText.text = _seasonDay.ToString();
     }
 
     public void FinishMatch()
@@ -54,6 +60,9 @@ public class UIController : MonoBehaviour
         _skillText.text = $"+{result[0]} Skill Points";
         _ratingPanelText.text = $"+{result[1]} Rating";
         _descriptionText.text = result[2];
+        _seasonDay++;
+        PlayerPrefs.SetInt("seasonDay", _seasonDay);
+        PlayerPrefs.Save();
         
         _rewardPanel.SetActive(true);
         _canvasGroup.DOFade(1f, 3f);
