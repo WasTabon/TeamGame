@@ -6,6 +6,12 @@ public class ChoosePlayerController : MonoBehaviour
 {
     [Header("UI: Общая информация")]
     [SerializeField] private TextMeshProUGUI _matchScoreText;
+    
+    [Header("UI: Характеристики Врага")]
+    [SerializeField] private TextMeshProUGUI _enemyAttackText1;
+    [SerializeField] private TextMeshProUGUI _enemyDefenseText1;
+    [SerializeField] private TextMeshProUGUI _enemyStaminaText1;
+    [SerializeField] private TextMeshProUGUI _enemySpeedText1;
 
     [Header("UI: Характеристики Игрока")]
     [SerializeField] private TextMeshProUGUI _attackText;
@@ -39,6 +45,8 @@ public class ChoosePlayerController : MonoBehaviour
     private bool _choose1;
     private bool _choose2;
     private bool _choose3;
+
+    private bool _wasGenerated;
 
     private PlayerStats _selectedPlayer1;
     private PlayerStats _selectedPlayer2;
@@ -92,6 +100,24 @@ public class ChoosePlayerController : MonoBehaviour
         _choosePlayerPanel.SetActive(false);
     }
 
+    public void GenerateStats()
+    {
+        if (!_wasGenerated)
+        {
+            enemySpeed = Random.Range(10, 31);
+            enemyStamina = Random.Range(10, 31);
+            enemyAttack = Random.Range(10, 31);
+            enemyDefense = Random.Range(10, 31);
+
+            _enemyAttackText1.text = enemyAttack.ToString();
+            _enemySpeedText1.text = enemySpeed.ToString();
+            _enemyStaminaText1.text = enemyStamina.ToString();
+            _enemyDefenseText1.text = enemyDefense.ToString();
+        
+            _wasGenerated = true;
+        }
+    }
+    
     public void StartGame()
     {
         _matchScoreText.text = "0 - 0";
@@ -114,15 +140,20 @@ public class ChoosePlayerController : MonoBehaviour
         _selectedPlayer2 = null;
         _selectedPlayer3 = null;
         
-        enemySpeed = Random.Range(10, 31);
-        enemyStamina = Random.Range(10, 31);
-        enemyAttack = Random.Range(10, 31);
-        enemyDefense = Random.Range(10, 31);
+        if (!_wasGenerated)
+        {
+            enemySpeed = Random.Range(10, 31);
+            enemyStamina = Random.Range(10, 31);
+            enemyAttack = Random.Range(10, 31);
+            enemyDefense = Random.Range(10, 31);
+        }
 
         _enemyAttackText.text = enemyAttack.ToString();
         _enemySpeedText.text = enemySpeed.ToString();
         _enemyStaminaText.text = enemyStamina.ToString();
         _enemyDefenseText.text = enemyDefense.ToString();
+
+        _wasGenerated = false;
     }
 
     public void CalculateTotalStats(out int totalSpeed, out int totalStamina, out int totalAttack, out int totalDefense)
