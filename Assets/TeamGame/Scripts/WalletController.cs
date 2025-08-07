@@ -11,7 +11,7 @@ public class WalletController : MonoBehaviour
     [SerializeField] private ScrollViewSnapController _scrollViewSnapController;
     [SerializeField] private RectTransform _items;
 
-    private int _skillPoints;
+    public int _skillPoints;
     public int skillPoints
     {
         get => _skillPoints;
