@@ -7,6 +7,8 @@ public class UIController : MonoBehaviour
 {
     public static UIController Instance;
 
+    [SerializeField] private CanvasGroup _teamStatsPanel;
+    
     [SerializeField] private TextMeshProUGUI _seasonDayText;
     
     [SerializeField] private TextMeshProUGUI _skillText;
@@ -49,21 +51,24 @@ public class UIController : MonoBehaviour
     {
         _moneyText.text = $"{WalletController.Instance.money}$";
         _ratingText.text = $"{WalletController.Instance.rating}";
-        _seasonDayText.text = _seasonDay.ToString();
+        _seasonDayText.text = $"Season Day: {_seasonDay.ToString()}";
     }
 
-    public void FinishMatch()
+    public void FinishMatch(List<string> result)
     {
-        List<string> result = new List<string>();
-        result = MatchResultSystem.Instance.GenerateRandomMatchResult();
-
         _skillText.text = $"+{result[0]} Skill Points";
         _ratingPanelText.text = $"+{result[1]} Rating";
         _descriptionText.text = result[2];
         _seasonDay++;
         PlayerPrefs.SetInt("seasonDay", _seasonDay);
         PlayerPrefs.Save();
-        
+
+        _teamStatsPanel.DOFade(0, 0.5f);
+        DOVirtual.DelayedCall(0.5f, () =>
+        {
+            _teamStatsPanel.gameObject.SetActive(false);
+        });
+
         _rewardPanel.SetActive(true);
         _canvasGroup.DOFade(1f, 3f);
     }
@@ -134,6 +139,8 @@ public class UIController : MonoBehaviour
         _canvasGroup.DOFade(0f, 1f)
             .OnComplete((() =>
             {
+                _teamStatsPanel.gameObject.SetActive(true);
+                _teamStatsPanel.DOFade(1, 0.5f);
                 GameManager.Instance.StartGame();
                 _matchPanel.gameObject.SetActive(false);
             }));
