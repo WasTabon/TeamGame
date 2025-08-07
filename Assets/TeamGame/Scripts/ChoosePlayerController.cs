@@ -14,6 +14,8 @@ public class ChoosePlayerController : MonoBehaviour
     [SerializeField] private Image _image2;
     [SerializeField] private Image _image3;
 
+    
+    
     private bool _choose1;
     private bool _choose2;
     private bool _choose3;
