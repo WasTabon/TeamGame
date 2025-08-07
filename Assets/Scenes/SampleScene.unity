@@ -32301,11 +32301,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c30e0908a66f2a489b311fbb9094504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _matchScoreText: {fileID: 0}
+  _matchScoreText: {fileID: 823970933}
   _attackText: {fileID: 620762554}
   _defenseText: {fileID: 1827186669}
   _staminaText: {fileID: 525868025}
   _speedText: {fileID: 1566381847}
+  _enemyAttackText: {fileID: 783667116}
+  _enemyDefenseText: {fileID: 955988763}
+  _enemyStaminaText: {fileID: 96755352}
+  _enemySpeedText: {fileID: 93002625}
   _choosePlayerPanel: {fileID: 1956472850}
   _text1: {fileID: 4860998668415978502}
   _text2: {fileID: 1159086600}

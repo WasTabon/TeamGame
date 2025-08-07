@@ -4,15 +4,25 @@ using UnityEngine.UI;
 
 public class ChoosePlayerController : MonoBehaviour
 {
+    [Header("UI: Общая информация")]
     [SerializeField] private TextMeshProUGUI _matchScoreText;
-    
+
+    [Header("UI: Характеристики Игрока")]
     [SerializeField] private TextMeshProUGUI _attackText;
     [SerializeField] private TextMeshProUGUI _defenseText;
     [SerializeField] private TextMeshProUGUI _staminaText;
     [SerializeField] private TextMeshProUGUI _speedText;
-    
+
+    [Header("UI: Характеристики Врага")]
+    [SerializeField] private TextMeshProUGUI _enemyAttackText;
+    [SerializeField] private TextMeshProUGUI _enemyDefenseText;
+    [SerializeField] private TextMeshProUGUI _enemyStaminaText;
+    [SerializeField] private TextMeshProUGUI _enemySpeedText;
+
+    [Header("UI: Панель выбора")]
     [SerializeField] private GameObject _choosePlayerPanel;
 
+    [Header("UI: Выбранные игроки")]
     [SerializeField] private TextMeshProUGUI _text1;
     [SerializeField] private TextMeshProUGUI _text2;
     [SerializeField] private TextMeshProUGUI _text3;
@@ -24,7 +34,7 @@ public class ChoosePlayerController : MonoBehaviour
     private bool _choose1;
     private bool _choose2;
     private bool _choose3;
-    
+
     private PlayerStats _selectedPlayer1;
     private PlayerStats _selectedPlayer2;
     private PlayerStats _selectedPlayer3;
@@ -80,7 +90,7 @@ public class ChoosePlayerController : MonoBehaviour
     public void StartGame()
     {
         _matchScoreText.text = "0 - 0";
-        
+
         _text1.text = "Choose Player";
         _text2.text = "Choose Player";
         _text3.text = "Choose Player";
@@ -93,12 +103,23 @@ public class ChoosePlayerController : MonoBehaviour
         _selectedPlayer2 = null;
         _selectedPlayer3 = null;
 
+        // Игрок
         CalculateTotalStats(out int totalSpeed, out int totalStamina, out int totalAttack, out int totalDefense);
-
         _attackText.text = totalAttack.ToString();
         _speedText.text = totalSpeed.ToString();
         _staminaText.text = totalStamina.ToString();
         _defenseText.text = totalDefense.ToString();
+
+        // Враг — рандом
+        int enemySpeed = Random.Range(10, 31);
+        int enemyStamina = Random.Range(10, 31);
+        int enemyAttack = Random.Range(10, 31);
+        int enemyDefense = Random.Range(10, 31);
+
+        _enemyAttackText.text = enemyAttack.ToString();
+        _enemySpeedText.text = enemySpeed.ToString();
+        _enemyStaminaText.text = enemyStamina.ToString();
+        _enemyDefenseText.text = enemyDefense.ToString();
     }
 
     public void CalculateTotalStats(out int totalSpeed, out int totalStamina, out int totalAttack, out int totalDefense)
