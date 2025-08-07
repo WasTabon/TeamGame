@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ChoosePlayerController : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _matchScoreText;
+    
     [SerializeField] private TextMeshProUGUI _attackText;
     [SerializeField] private TextMeshProUGUI _defenseText;
     [SerializeField] private TextMeshProUGUI _staminaText;
@@ -77,6 +79,8 @@ public class ChoosePlayerController : MonoBehaviour
 
     public void StartGame()
     {
+        _matchScoreText.text = "0 - 0";
+        
         _text1.text = "Choose Player";
         _text2.text = "Choose Player";
         _text3.text = "Choose Player";
