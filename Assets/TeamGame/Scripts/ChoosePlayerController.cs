@@ -98,19 +98,17 @@ public class ChoosePlayerController : MonoBehaviour
         _image1.sprite = null;
         _image2.sprite = null;
         _image3.sprite = null;
-
-        _selectedPlayer1 = null;
-        _selectedPlayer2 = null;
-        _selectedPlayer3 = null;
-
-        // Игрок
+        
         CalculateTotalStats(out int totalSpeed, out int totalStamina, out int totalAttack, out int totalDefense);
         _attackText.text = totalAttack.ToString();
         _speedText.text = totalSpeed.ToString();
         _staminaText.text = totalStamina.ToString();
         _defenseText.text = totalDefense.ToString();
-
-        // Враг — рандом
+        
+        _selectedPlayer1 = null;
+        _selectedPlayer2 = null;
+        _selectedPlayer3 = null;
+        
         int enemySpeed = Random.Range(10, 31);
         int enemyStamina = Random.Range(10, 31);
         int enemyAttack = Random.Range(10, 31);
