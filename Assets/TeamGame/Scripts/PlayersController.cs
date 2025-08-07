@@ -106,6 +106,10 @@ public class PlayersController : MonoBehaviour
                 _playerStats.SaveToFile();
             }
             MusicController.Instance.PlaySpecificSound(_upgradeSkillSound);
+            _playerSpeedText.text = $"{_playerStats.speed}/10";
+            _playerStaminaText.text = $"{_playerStats.stamina}/10";
+            _playerAttackText.text = $"{_playerStats.attack}/10";
+            _playerDefenseText.text = $"{_playerStats.defense}/10";
         }
         else
         {
@@ -116,18 +120,22 @@ public class PlayersController : MonoBehaviour
     
     public void UpgradeSpeed()
     {
+        _currentSkill = UpgradeType.Speed;
         OpenUpgradePanel(UpgradeType.Speed);
     }
     public void UpgradeStamina()
     {
+        _currentSkill = UpgradeType.Stamina;
         OpenUpgradePanel(UpgradeType.Stamina);
     }
     public void UpgradeAttack()
     {
+        _currentSkill = UpgradeType.Attack;
         OpenUpgradePanel(UpgradeType.Attack);
     }
     public void UpgradeDefense()
     {
+        _currentSkill = UpgradeType.Defense;
         OpenUpgradePanel(UpgradeType.Defense);
     }
 
